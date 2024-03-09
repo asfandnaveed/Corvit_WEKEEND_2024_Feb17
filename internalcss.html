@@ -6,17 +6,25 @@
 		<style type="text/css">
 			
 
-			h1{
-				color: blue;
-				font-size: 50px;
-			}
-			p{
-
+			
+			.heading{
+				color: royalblue;
+				font-size: 60px;
 			}
 
-			td{
-				border: 2px solid;
+			table ,th,td{
+				border:2px solid ;
 			}
+
+
+			.marks, .marks th ,.marks td{
+				border:3px solid;
+				border-color: skyblue;
+			}
+
+			
+			
+
 
 
 		</style>
@@ -26,19 +34,46 @@
 		
 
 		<h1>Internal CSS</h1>
-		<h1>Wellcome to website</h1>
+		<h1 class="heading">Wellcome to website</h1>
 
-		<table style="border: 2px solid;">
+		<table>
 			
 			<tr>
-				<th style="border:1px solid;">ID</th>
-				<th style="border:1px solid;">Name</th>
-				<th style="border:1px solid;">Email</th>
-				<th style="border:1px solid;">Address</th>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
 			</tr>
 			<tr>
-				<td style="border:1px solid;">01</td>
-				<td style="border:1px solid;">Ali</td>
+				<td>01</td>
+				<td>Ali</td>
+				<td>ali@gmail.com</td>
+				<td>Lahore , Pakistan</td>
+			</tr>
+
+			<tr>
+				<td>02</td>
+				<td>Ahmad</td>
+				<td>ahmad@gmail.com</td>
+				<td>Karachi , Pakistan</td>
+			</tr>
+
+		</table>
+
+		<hr>
+
+
+		<table class="marks">
+			
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+			</tr>
+			<tr>
+				<td>01</td>
+				<td>Ali</td>
 				<td>ali@gmail.com</td>
 				<td>Lahore , Pakistan</td>
 			</tr>
