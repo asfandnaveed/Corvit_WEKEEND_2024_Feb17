@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Position</title>
+	<style type="text/css">
+		
+		.div1{
+			height: 600px;
+			width: 200px;
+			background-color: blueviolet;
+
+			/*position: fixed;
+			bottom: 40px;
+			right: 40px;
+			border-radius: 60px;*/
+		}
+		.div2{
+			height: 100px;
+			width:100%;
+			background-color: lightcoral;
+			position: sticky;
+			top: 0px;
+		}
+		.div3{
+			height: 400px;
+			width: 300px;
+			background-color: lightseagreen;
+			position: relative;
+		}
+		.div4{
+			height: 50px;
+			width: 50px;
+			background-color: deeppink;
+			border-radius:60px;
+			position: absolute;
+			right: 20px;
+			top: 0px;
+
+		}
+		.image{
+			width: 300px;
+			height: 400px;
+		}
+		.box-1{
+			position: relative;
+		}
+		.cover{
+			position: absolute;
+			top: 40px;
+			left: 40px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="div1">Div 1</div>
+	<div class="div2">Div 2</div>
+	<div class="div3">Div 3
+		<div class="div4"></div>
+	</div>
+
+	<div class="box-1">
+		<img class="image" src="https://images.unsplash.com/photo-1709923274819-2d1473b33d17?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+		<div class="cover">Rain Cover For Tent</div>
+	</div>
+
+
+</body>
+</html>
