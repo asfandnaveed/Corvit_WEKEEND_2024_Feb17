@@ -1,0 +1,37 @@
+@font-face{
+	src: url('../fonts/GrandHotel-Regular.otf');
+	font-family: 'grand';
+}
+
+.header_bg{
+	background-color: #303030;
+}
+.header_heading{
+	font-size: 7vw;
+	color: #f6cf43;
+	font-family: 'grand';
+}
+.header_sub_heading{
+	color: white;
+}
+.header_btn{
+	background-color: #f6cf43;
+}
+
+.best_seller_h{
+	font-family: 'grand';
+	font-size: 4vw;
+}
+
+.best_seller_product{
+	font-family: 'grand';
+	font-size: 2vw;
+}
+.oriental_height{
+	height: 500px;
+}
+.oriental_bg{
+	background-image: url('../images/orientalBackground.png') ;
+	height: 80vh;
+
+}
