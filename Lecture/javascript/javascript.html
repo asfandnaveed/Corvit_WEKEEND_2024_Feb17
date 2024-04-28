@@ -11,15 +11,18 @@
 	
 	<div id="text">Hello Corvit</div>
 
-	<button onclick="document.getElementById('text').innerHTML = '<h1>text change</h1>';">Click to Change Text</button>
+	<button onclick="changeValue();">Click to Change Value</button>
 
-	<button onclick="document.getElementById('text').style.fontSize = '90px';">Click to Change fontSize</button>
-
-	<button onclick="document.getElementById('text').style.color = 'blue';">Click to Change fontSize</button>
+	
 
 
 	<script type="text/javascript">
 		
+		function changeValue (){
+			document.getElementById('text').innerHTML = '<h1>text change</h1>';
+			document.getElementById('text').style.fontSize = '90px';
+			document.getElementById('text').style.color = 'blue';
+		}
 	
 	</script>
 </body>
