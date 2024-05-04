@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jquery</title>
+</head>
+<body>
+
+
+	<div id="text">Hello Corvit</div>
+	<button id="btn">Change the Text Button1</button>
+	<button id="btn2">Change the Text Button2</button>
+
+
+	<script type="text/javascript" src="js/jquery-3.7.1.js">
+	</script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			$('#btn2').hide()
+
+			$('#btn').click(function(){
+				$('#text').text('Text Change');
+				$(this).hide(2000,function(){
+					$('#btn2').show()
+				});
+				
+			});
+
+		});
+		
+
+		
+
+	</script>
+
+
+</body>
+</html>
