@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Animation</title>
+</head>
+<body>
+
+<button id="btn">Animate</button>
+	<div id="anim" style="background-color: green;width: 200px;height: 200px;position: absolute;"></div>
+	
+
+
+
+<script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#btn').click(function(){
+			$('#anim').animate({
+				height : '250px',
+				width : '250px',
+				bottom : '0px',
+				right : '0px'
+			},2000);
+		});
+	});
+	
+</script>
+
+</body>
+</html>
