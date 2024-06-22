@@ -6,15 +6,7 @@ $sql = "SELECT * FROM products";
 
 $result = $con->query($sql);
 
-	if($result->num_rows>0){
-
-		while($row = $result->fetch_assoc()){
-
-			echo $row['name'].'\n';
-
-		}
-		
-	}
+	
 
 
 
@@ -28,7 +20,7 @@ $result = $con->query($sql);
 <head>
 
     <meta charset="utf-8" />
-    <title>Marketplace | Velzon - Admin & Dashboard Template</title>
+    <title>Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -56,31 +48,60 @@ $result = $con->query($sql);
 
 
 	<div class="row">
-                        <div class="col-3">
-                            <div class="card explore-box card-animate">
-                                <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                                    <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                                </div>
-                                <div class="explore-place-bid-img">
-                                    <img src="assets/images/nft/img-02.jpg" alt="" class="card-img-top explore-img" />
-                                    <div class="bg-overlay"></div>
+
+
+        <?php
+            
+
+            if($result->num_rows>0){
+
+                while($row = $result->fetch_assoc()){
+
+                    echo '<div class="col-3">';
+                    echo '<div class="card explore-box card-animate">';
+                    echo '<div class="bookmark-icon position-absolute top-0 end-0 p-2">';
+                    echo '<button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>';
+                    echo '</div>';
+                    echo '<div class="explore-place-bid-img">';
+                    echo '<img src="'.$row['image'].'" alt="" class="card-img-top explore-img" />';
+                    echo '<div class="bg-overlay"></div>';
+                    echo '</div>';
+                    echo '<div class="card-body">';
+                    echo '<p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>';
+                    echo '<h5 class="mb-1"><a href="apps-nft-item-details.html">'.$row['name'].'</a></h5>';
+                    echo '<p class="text-muted mb-0">'.$row['description'].'</p>';
+                    echo '</div>';
+                    echo '<div class="card-footer border-top border-top-dashed">';
+                    echo '<div class="d-flex align-items-center">';
+                    echo '<div class="flex-grow-1 fs-14">';
+                    echo '<i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Stock: <span class="fw-medium">'.$row['stock'].' items</span>';
+                    echo '</div>';
+                    echo '<h5 class="flex-shrink-0 fs-14 text-primary mb-0">Rs '.$row['price'].'</h5>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                }
+                
+            }
+            
+
+        ?>
+
+                        
                                     
-                                </div>
-                                <div class="card-body">
-                                    <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>
-                                    <h5 class="mb-1"><a href="apps-nft-item-details.html">Produc Name</a></h5>
-                                    <p class="text-muted mb-0">Description</p>
-                                </div>
-                                <div class="card-footer border-top border-top-dashed">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1 fs-14">
-                                            <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Stock: <span class="fw-medium">45 items</span>
-                                        </div>
-                                        <h5 class="flex-shrink-0 fs-14 text-primary mb-0">Rs 300</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                
+                                
+                                    
+                                        
+                                            
+                                        
+                                        
+                                    
+                                
+                            
+                        
                     </div>
 
                 </div>
