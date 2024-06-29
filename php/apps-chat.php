@@ -1,3 +1,48 @@
+<?php
+session_start();
+
+require 'connection.php';
+
+if( isset($_SESSION['login'])){
+
+
+
+
+
+
+}else{
+    header('Location: login.php');
+}
+
+
+if(isset($_POST['message'])){
+
+        
+
+
+        $message = $_POST['message'];
+        $userId = $_SESSION['userId'];
+        $dateTime = date('Y-m-d H:m:s');
+        $status = 'delivered';
+
+       
+
+        $sql = "INSERT INTO chats (user_id,message,status,created_at) VALUE ('$userId','$message','$status','$dateTime')";
+
+        if($con->query($sql)==TRUE){
+            echo '<div class="alert alert-success">message Sent</div>';
+        }else{
+             echo '<div class="alert alert-danger">Something Went Wrong</div>';
+        }
+
+    }
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
 
@@ -221,13 +266,17 @@
                                             </div>
                                             <!-- end chat user head -->
                                             <div class="chat-conversation p-3 p-lg-4 " id="chat-conversation" data-simplebar>
-                                                <div id="elmLoader">
+                                               <!--  <div id="elmLoader">
                                                     <div class="spinner-border text-primary avatar-sm" role="status">
                                                         <span class="visually-hidden">Loading...</span>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <ul class="list-unstyled chat-conversation-list" id="users-conversation">
-                                                    
+                                                    <!-- CHAT ELEMENT  -->
+
+                                                    <li class="chat-list right" id="chat-list-1">                <div class="conversation-list">                    <div class="user-chat-content">                        <div class="ctext-wrap">                            <div class="ctext-wrap-content">                                <p class="mb-0 ctext-content">                                    test                                </p>                            </div>                            <div class="dropdown align-self-start message-box-drop">                                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                    <i class="ri-more-2-fill"></i>                                </a>                                <div class="dropdown-menu">                                    <a class="dropdown-item reply-message" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>                                    <a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>                                    <a class="dropdown-item copy-message" href="#" "=""><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>                                    <a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>                                    <a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>                            </div>                        </div>                    </div>                    <div class="conversation-name">                        <small class="text-muted time">04:06 pm</small>                        <span class="text-success check-message-icon"><i class="bx bx-check"></i></span>                    </div>                </div>            </div>        </li>
+
+                                                    <!-- CHAT ELEMENT END -->
                                                 </ul>
                                                 <!-- end chat-conversation-list -->
                                             </div>
@@ -311,11 +360,11 @@
                                             </div>
                                         </div>
 
-                                        <!-- end chat-conversation -->
+                                        <!-- end chat-conversation  id="chatinput-form" -->
 
                                         <div class="chat-input-section p-3 p-lg-4">
 
-                                            <form id="chatinput-form" enctype="multipart/form-data">
+                                            <form method="POST" action="apps-chat.php"  enctype="multipart/form-data">
                                                 <div class="row g-0 align-items-center">
                                                     <div class="col-auto">
                                                         <div class="chat-input-links me-2">
@@ -331,7 +380,7 @@
                                                         <div class="chat-input-feedback">
                                                             Please Enter a Message
                                                         </div>
-                                                        <input type="text" class="form-control chat-input bg-light border-light" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                                                        <input type="text" name="message" class="form-control chat-input bg-light border-light" id="chat-input" placeholder="Type your message..." autocomplete="off">
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="chat-input-links ms-2">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require 'connection.php';
 
@@ -26,7 +27,11 @@ if( isset($_POST['email']) ){
 
     	if(password_verify($password, $row['password'])==true){
 
-    		echo $row['name'];
+    		$_SESSION['login']= $row['email'];
+            $_SESSION['userId'] = $row['id'];
+
+            header('Location: apps-chat.php');
+
 
     	}else{
     		echo 'Wrong password ';
